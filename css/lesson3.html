@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>web page using html and css</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: #FCF6F5;
+        }
+
+        .siteheader {
+            background: #990011;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            left: 0px;
+            top: 0px;
+            position: sticky;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .sitename {
+            color: #FCF6F5;
+            text-transform: uppercase;
+            font-size: 40px;
+        }
+
+        .siteheader .links {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .siteheader .links a {
+            color: #990011;
+            text-decoration: none;
+            align-items: center;
+            margin-right: 10px;
+            background-color: #FCF6F5;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .siteheader .links a:hover {
+            background: #990011;
+            color: #FCF6F5;
+            cursor: pointer;
+        }
+
+        .section1 {
+            padding: 15px;
+        }
+
+        .article {
+            border: 3px solid #990011;
+            margin: 0px 10px 50px 10px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+
+        .article .articleheading {
+            background: #990011;
+            padding: 20px;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .acontant {
+            padding: 25px;
+            display: flex;
+        }
+
+        .card {
+            cursor: pointer;
+            height: 300px;
+            width: 300px;
+        }
+
+        .acontant img {
+            border-radius: 300px;
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+            transition: all 1s ease;
+            filter: grayscale(100%);
+        }
+
+        .card:hover>img {
+            transform: rotateY(360deg);
+            filter: grayscale(0%);
+        }
+
+        .acontant .contant {
+            padding: 20px 0px 0px 35px;
+            text-align: justify;
+            text-indent: 100px;
+            line-height: 150%;
+            font-size: 17px;
+        }
+
+        .footer {
+            background: #990011;
+            padding: 15px;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="siteheader">
+        <img class="img" src="images/icon.png" alt="">
+        <h2 class="sitename">The Easy Learn Academy</h2>
+        <ul class="links">
+            <li><a href="lesson1.html">Home</a></li>
+            <li><a href="lesson1.html">Product</a></li>
+            <li><a href="lesson1.html">Cources</a></li>
+            <li><a href="lesson1.html">About Us</a></li>
+            <li><a href="lesson1.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="section1">
+
+        <header>
+            <h2>page heading</h2>
+        </header>
+
+        <article class="article">
+            <header class="articleheading">
+                <h3>Article 1 Heading</h3>
+            </header>
+            <div class="acontant">
+                <div class="card">
+                    <img class="img" src="https://picsum.photos/300" alt="">
+                </div>
+                <p class="contant">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vitae eaque totam amet repellendus
+                    error
+                    perspiciatis tenetur blanditiis provident repudiandae! Dicta doloremque, non quibusdam minima, animi
+                    magnam
+                    rerum velit ducimus, beatae aliquam nihil. Excepturi corporis omnis cupiditate quo molestias,
+                    blanditiis
+                    expedita ex inventore necessitatibus reprehenderit, alias repudiandae, accusantium veritatis
+                    deleniti
+                    assumenda delectus? Fuga ipsa earum alias laudantium expedita perspiciatis repellat delectus
+                    deserunt
+                    dignissimos id, atque iusto ut mollitia voluptatum blanditiis? Amet velit sit facere, veniam quae
+                    consequatur numquam in obcaecati ratione eaque quidem molestiae. Qui nulla similique, numquam
+                    dolorem
+                    non
+                    iusto nihil est necessitatibus ullam. Accusamus accusantium deserunt exercitationem ullam.
+                </p>
+            </div>
+            <footer class="footer">
+                developed by : meet navadiya
+            </footer>
+        </article>
+
+        <article class="article">
+            <header class="articleheading">
+                <h3>Article 2 Heading</h3>
+            </header>
+            <div class="acontant">
+                <div class="card">
+                    <img class="img" src="https://picsum.photos/300?random=2" alt="">
+                </div>
+                <p class="contant">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vitae eaque totam amet repellendus
+                    error
+                    perspiciatis tenetur blanditiis provident repudiandae! Dicta doloremque, non quibusdam minima, animi
+                    magnam
+                    rerum velit ducimus, beatae aliquam nihil. Excepturi corporis omnis cupiditate quo molestias,
+                    blanditiis
+                    expedita ex inventore necessitatibus reprehenderit, alias repudiandae, accusantium veritatis
+                    deleniti
+                    assumenda delectus? Fuga ipsa earum alias laudantium expedita perspiciatis repellat delectus
+                    deserunt
+                    dignissimos id, atque iusto ut mollitia voluptatum blanditiis? Amet velit sit facere, veniam quae
+                    consequatur numquam in obcaecati ratione eaque quidem molestiae. Qui nulla similique, numquam
+                    dolorem
+                    non
+                    iusto nihil est necessitatibus ullam. Accusamus accusantium deserunt exercitationem ullam.
+                </p>
+            </div>
+            <footer class="footer">
+                developed by : meet navadiya
+            </footer>
+        </article>
+
+        <article class="article">
+            <header class="articleheading">
+                <h3>Article 3 Heading</h3>
+            </header>
+            <div class="acontant">
+                <div class="card">
+                    <img class="img" src="https://picsum.photos/300?random=3" alt="">
+                </div>
+                <p class="contant">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vitae eaque totam amet repellendus
+                    error
+                    perspiciatis tenetur blanditiis provident repudiandae! Dicta doloremque, non quibusdam minima, animi
+                    magnam
+                    rerum velit ducimus, beatae aliquam nihil. Excepturi corporis omnis cupiditate quo molestias,
+                    blanditiis
+                    expedita ex inventore necessitatibus reprehenderit, alias repudiandae, accusantium veritatis
+                    deleniti
+                    assumenda delectus? Fuga ipsa earum alias laudantium expedita perspiciatis repellat delectus
+                    deserunt
+                    dignissimos id, atque iusto ut mollitia voluptatum blanditiis? Amet velit sit facere, veniam quae
+                    consequatur numquam in obcaecati ratione eaque quidem molestiae. Qui nulla similique, numquam
+                    dolorem
+                    non
+                    iusto nihil est necessitatibus ullam. Accusamus accusantium deserunt exercitationem ullam.
+                </p>
+            </div>
+            <footer class="footer">
+                developed by : meet navadiya
+            </footer>
+        </article>
+
+        <article class="article">
+            <header class="articleheading">
+                <h3>Article 4 Heading</h3>
+            </header>
+            <div class="acontant">
+                <div class="card">
+                    <img class="img" src="https://picsum.photos/300?random=4" alt="">
+                </div>
+                <p class="contant">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vitae eaque totam amet repellendus
+                    error
+                    perspiciatis tenetur blanditiis provident repudiandae! Dicta doloremque, non quibusdam minima, animi
+                    magnam
+                    rerum velit ducimus, beatae aliquam nihil. Excepturi corporis omnis cupiditate quo molestias,
+                    blanditiis
+                    expedita ex inventore necessitatibus reprehenderit, alias repudiandae, accusantium veritatis
+                    deleniti
+                    assumenda delectus? Fuga ipsa earum alias laudantium expedita perspiciatis repellat delectus
+                    deserunt
+                    dignissimos id, atque iusto ut mollitia voluptatum blanditiis? Amet velit sit facere, veniam quae
+                    consequatur numquam in obcaecati ratione eaque quidem molestiae. Qui nulla similique, numquam
+                    dolorem
+                    non
+                    iusto nihil est necessitatibus ullam. Accusamus accusantium deserunt exercitationem ullam.
+                </p>
+            </div>
+            <footer class="footer">
+                developed by : meet navadiya
+            </footer>
+        </article>
+
+        <article class="article">
+            <header class="articleheading">
+                <h3>Article 5 Heading</h3>
+            </header>
+            <div class="acontant">
+                <div class="card">
+                    <img class="img" src="https://picsum.photos/300?random=5" alt="">
+                </div>
+                <p class="contant">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vitae eaque totam amet repellendus
+                    error
+                    perspiciatis tenetur blanditiis provident repudiandae! Dicta doloremque, non quibusdam minima, animi
+                    magnam
+                    rerum velit ducimus, beatae aliquam nihil. Excepturi corporis omnis cupiditate quo molestias,
+                    blanditiis
+                    expedita ex inventore necessitatibus reprehenderit, alias repudiandae, accusantium veritatis
+                    deleniti
+                    assumenda delectus? Fuga ipsa earum alias laudantium expedita perspiciatis repellat delectus
+                    deserunt
+                    dignissimos id, atque iusto ut mollitia voluptatum blanditiis? Amet velit sit facere, veniam quae
+                    consequatur numquam in obcaecati ratione eaque quidem molestiae. Qui nulla similique, numquam
+                    dolorem
+                    non
+                    iusto nihil est necessitatibus ullam. Accusamus accusantium deserunt exercitationem ullam.
+                </p>
+            </div>
+            <footer class="footer">
+                developed by : meet navadiya
+            </footer>
+        </article>
+
+    </div>
+
+    <footer></footer>
+
+</body>
+
+</html>

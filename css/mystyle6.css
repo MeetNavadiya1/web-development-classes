@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 1px;
+}
+
+body{
+    background: aliceblue;
+}
+
+article{
+    width: 80%;
+    background-color: cyan;
+    margin: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    border: 2px solid black;
+}
+
+div{
+    border: 2px solid black;
+    padding: 10px;
+}

@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: beige;
+}
+
+.box{
+    border: 3px solid black;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+    position: absolute;
+}
+
+#red{
+    background-color: red;
+    top: 50px;
+    left: 50px;
+    z-index: 5;
+}
+
+#green{
+    background-color: green;
+    top: 150px;
+    left: 150px;
+    z-index: 4;
+}
+
+#blue{
+    background-color: blue;
+    top: 250px;
+    left: 250px;
+    z-index: 3;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example of form attribute</title>
+</head>
+<body>
+    
+    <form action="lesson1.html">
+        <table border="2" align="center" width="70%" cellspacing="5">
+            <tr>
+                <td>
+                    <label for="">
+                        Enter your username
+                    </label>
+                    <input type="text" name="username" autofocus>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">
+                        Enter your email
+                    </label>
+                    <input type="email" name="email" autocomplete="off">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Enter your age : </label>
+                    <input type="number" name="age" min="18" max="45">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Enter your image : </label>
+                    <input type="file" name="image" accept="image/*" multiple>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Enter your mobile number : </label>
+                    <input type="tel" name="mobile" pattern="[789][0-9]{9}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit 1" formaction="lesson2.html">
+                    <input type="submit" value="Submit 2" formaction="lesson3.html">
+                </td>
+            </tr>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

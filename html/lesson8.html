@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+</head>
+<body>
+    
+   <form action="lesson1.html" method="post" enctype="multipart/form-data">
+    <table border="2" width="40%" cellpadding="10" cellspacing="5" align="center">
+        <tr>
+            <td>Enter your name</td>
+            <td><input type="text" name="user_name" placeholder="Enter your name" required></td>
+        </tr>
+        <tr>
+            <td>Enter your phone number</td>
+            <td><input type="number" name="user_phone" placeholder="Enter your phone number" required></td>
+        </tr>
+        <tr>
+            <td>Enter date of birth</td>
+            <td><input type="date" name="dob" required></td>
+        </tr>
+        <tr>
+            <td>Select your city</td>
+            <td>
+                <select name="user_city" id="">
+                    <option value="0">bhavnagar</option>
+                    <option value="1">surat</option>
+                    <option value="0">rajkot</option>
+                    <option value="0">ahmedabad</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Select your gender</td>
+            <td>
+                <input type="radio" name="gender" value="0">male
+                <input type="radio" name="gender" value="1">female
+            </td>
+        </tr>
+        <tr>
+            <td>Select your hobbies</td>
+            <td>
+                <input type="checkbox" name="hobbies" value="0">coding
+                <input type="checkbox" name="hobbies" vlues="1">cricket
+                <input type="checkbox" name="hobbies" vlues="2">traveling
+                <input type="checkbox" name="hobbies" value="3">hockey
+            </td>
+        </tr>
+        <tr>
+            <td>select image</td>
+            <td><input type="file" name="image" accept="image/*"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Register">
+                <input type="reset" value="Cleare All">
+            </td>
+        </tr>
+    </table>
+   </form>
+
+</body>
+</html>

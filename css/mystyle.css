@@ -1,0 +1,190 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #FCF6F5;
+}
+
+.siteheader {
+    z-index: 1;
+    background: #990011;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    left: 0px;
+    top: 0px;
+    position: sticky;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.sitename {
+    color: #FCF6F5;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.siteheader .links {
+    display: flex;
+    list-style-type: none;
+}
+
+.siteheader .links a:link,
+.siteheader .link a:visited {
+    color: #990011;
+    text-decoration: none;
+    align-items: center;
+    margin-right: 10px;
+    background-color: #FCF6F5;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: 900;
+}
+
+.siteheader .links a:hover {
+    background: #990011;
+    color: #FCF6F5;
+    cursor: pointer;
+}
+
+.siteheader .link .a:active {
+    background: blue;
+    color: white;
+}
+
+.section1 {
+    padding: 15px;
+}
+
+.article {
+    border: 3px solid #990011;
+    margin: 0px 10px 50px 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.article .articleheading {
+    background: #990011;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.acontant {
+    padding: 25px;
+    display: flex;
+}
+
+.card {
+    cursor: pointer;
+    border-radius: 300px;
+}
+
+.acontant img {
+    border-radius: 300px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transition: all 1s ease;
+    filter: grayscale(100%);
+}
+
+.card:hover>img {
+    transform: rotateY(360deg);
+    filter: grayscale(0%);
+}
+
+.acontant .contant {
+    padding: 20px 0px 0px 35px;
+    text-align: justify;
+    text-indent: 100px;
+    line-height: 150%;
+    font-size: 17px;
+}
+
+.footer {
+    background: #990011;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+ /* course */
+ #courses {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#courses>article {
+    border: 1px solid brown;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#courses>article>header {
+    background-color: #990011;
+    color: white;
+    padding: 10px 5px;
+    font-weight: bold;
+}
+
+.content>p {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+#courses>article>div>img {
+    width: 100%;
+}
+
+  /* ##Device = Desktops ##Screen = 1281px to higher resolution desktop */
+  @media (min-width: 1281px) {
+    /* code in this block will be applied only if device width>1281 */
+    #courses>article
+    {
+        width: calc(25% - 8px);
+    }
+}
+
+/* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+    /* code in this block will be applied only if device width>1025 and <1280 */
+    #courses>article
+    {
+        width: calc(25% - 8px);
+    }
+}
+
+/* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* code in this block will be applied only if device width>768 and <1024 */
+    #courses>article
+   {
+       width: calc(33% - 5px);
+   }
+}
+
+/* ##Device = Low Resolution Tablets,  ##Screen = B/w 481px to 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+    /* code in this block will be applied only if device width>481 and <767 */
+   #courses>article
+   {
+       width: calc(50% - 5px);
+   }
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+@media (min-width: 320px) and (max-width: 480px) {
+    /* code in this block will be applied only if device width>320 and <480 */
+   #courses>article
+   {
+       width: 100%;
+   }
+}
