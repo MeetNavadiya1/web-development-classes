@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header text-bg-warning">
+                        <h2>register</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="success.html" method="post">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="First name"
+                                        aria-label="First name" required />
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="father name"
+                                        aria-label="father name" reuqired />
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="sur name" aria-label="sur name"
+                                        reuqired />
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <input type="email" class="form-control" placeholder="Enter E-mail"
+                                        aria-label="email" name="e-mail" required />
+                                </div>
+                                <div class="col">
+                                    <input type="password" class="form-control" placeholder="Enter password"
+                                        aria-label="password" name="password" required />
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <div class="fw-bold">select photo</div>
+                                </div>
+                                <div class="col">
+                                    <div class="fw-bold">select gender</div>
+                                </div>
+                                <div class="col">
+                                    <div class="fw-bold">select language</div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col">
+                                    <input type="file" class="form-control" name="photo" required />
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" value="1"
+                                            id="male" />
+                                        <label class="form-check-label" for="male">
+                                            Male
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="female"
+                                            value="2" />
+                                        <label class="form-check-label" for="female">
+                                            Female
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gujarati" value="1">
+                                        <label class="form-check-label" for="gujarati">
+                                            Gujarati
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="hindi" value="2">
+                                        <label class="form-check-label" for="hindi">
+                                            Hindi
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="english" value="4">
+                                        <label class="form-check-label" for="english">
+                                            English
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <select class="form-select">
+                                        <option value="">--select counrty--</option>
+                                        <option value="">india</option>
+                                        <option value="">japan</option>
+                                        <option value="">russia</option>
+                                        <option value="">germany</option>
+                                        <option value="">france</option>
+                                        <option value="">uk</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select">
+                                        <option value="">--select state--</option>
+                                        <option value="">gujarat</option>
+                                        <option value="">Maharatra</option>
+                                        <option value="">punjab</option>
+                                        <option value="">madya pradesh</option>
+                                        <option value="">Rajasthan</option>
+                                        <option value="">jammu & kashmir</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" name="city" placeholder="city" />
+                                </div>
+                                <div class="col">
+                                    <input type="number" name="password" class="form-control" placeholder="pincode">
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <label for="address" class="form-label fw-bold">Address</label>
+                                    <textarea name="address" id="address" class="form-control"></textarea>
+                                </div>
+                                <div class="col">
+                                    <button class="btn text-bg-warning w-100 mt-5">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
