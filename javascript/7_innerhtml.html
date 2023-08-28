@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content{
+            font-size: xx-large;
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>working with inner html property</h1>
+    <hr/>
+    <input type="text" id="fullname" />
+    <button type="button" onclick="SetContent();">click me to change paregraph</button>
+    <button type="button" onclick="GetContent();">click me to get content of paregraph</button>
+    <button type="button" onclick="ClearInput();">clear input</button>
+
+    <p id="content">
+
+    </p>
+
+    <script>
+
+        //user define function
+        function SetContent()
+        {
+            var fullname = document.getElementById('fullname').value;
+            document.getElementById('content').innerHTML = fullname;
+        }
+        function GetContent()
+        {
+            var temp = document.getElementById('content').innerHTML;
+            alert(temp);
+        }
+        function ClearInput()
+        {
+            document.getElementById('fullname').value = "";
+            document.getElementById('content').innerHTML = "";
+        }
+
+    </script>
+    
+</body>
+</html>

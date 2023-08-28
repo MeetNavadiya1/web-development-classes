@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>write method and prompt method in javascript</h1>
+    <hr />
+    <strong>result of operation</strong>
+
+    <script>
+
+        var message = "Enter the number ";
+        var defaultvalue = 1;
+
+        var first = prompt(message,defaultvalue);
+        var second = prompt(message,defaultvalue);
+
+        // conversion of datatype
+        first = parseFloat(first);
+        second = parseFloat(second);
+
+        // arithmetic variable
+        var addition = first + second;
+        var subtraction = first - second;
+        var multipliation = first * second;
+        var division = (first / second).toFixed(2);
+
+        document.write("<br>",addition,"<br>",subtraction,"<br>",multipliation,"<br>",division);
+
+    </script>
+
+
+</body>
+</html>
