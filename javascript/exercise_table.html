@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header text-center text-bg-primary fs-4 fw-semibold">
+                        Table Generator
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post" onsubmit="return GetTable();">
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="start" class="form-label">Starting of Table :</label>
+                                    <input type="number" class="form-control form-floating" id="start"
+                                        placeholder="Enter starting number of table" required />
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="end" class="form-label">Ending of Table :</label>
+                                    <input type="number" class="form-control form-floating" id="end"
+                                        placeholder="Enter ending number of table" required />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 fs-5">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header text-bg-primary text-center fs-4 fw-semibold">
+                        Output
+                    </div>
+                    <div class="card-body">
+                        <div class="row  row-gap-3 p-3" id="cards">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="common.js"></script>
+    <script src="exercise_table.js"></script>
+</body>
+
+</html>

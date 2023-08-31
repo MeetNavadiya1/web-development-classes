@@ -1,13 +1,13 @@
 let GenerateTable = function(){
     // alert("form submmited")
-    let row = document.getElementById('row').value;
-    let column = document.getElementById('column').value;
-    let name = document.getElementById('name').value;
+    let row = $('row').value;
+    let column = $('column').value;
+    let name = $('name').value;
     let loop = document.querySelector("input[name='loop']:checked").value;
     loop = parseInt(loop);
     console.log(row,column,name,loop);
-    var output = document.getElementById('output');
-    var temp = '';
+    let output = $('output');
+    let temp = '';
 
     //decision making system
     if(loop === 1)
@@ -25,6 +25,7 @@ let GenerateTable = function(){
                 j++;
             }
             while(j<=column);
+            temp = temp + '</tr>';
             i++;
         }
         while(i<=row);
@@ -44,6 +45,7 @@ let GenerateTable = function(){
                 temp = temp + `<td>${name}</td>`;
                 j++;
             }
+            temp = temp + '</tr>';
             i++;
         }
         console.log(temp);
@@ -59,6 +61,7 @@ let GenerateTable = function(){
             {
                 temp = temp + `<td>${name}</td>`;
             }
+            temp = temp + '</tr>';
         }
         console.log(temp);
         output.innerHTML = temp;
