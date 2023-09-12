@@ -2,6 +2,8 @@ function GetTable() {
     let start = $('start').value;
     let end = $('end').value;
     let output = $('cards');
+    start = parseInt(start);
+    end = parseInt(end);
     let temp = '';
     let m = '';
     for (let i = start; i <= end; i++) {

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>deafault argument in javascript</h1>
+    
+    <script src="common.js"></script>
+    <script>
+        let amount = prompt("Enter amount : ");
+        let rate = prompt("Enter rate of interest :");
+        let year = prompt("Enter year :");
+
+        amount = parseInt(amount);
+        rate = parseInt(rate);
+        year = parseInt(year);
+
+        // let interest = getSimpleInterest(amount, rate, year);
+        // console.log(interest);
+        // document.write(interest);
+
+        interest = getSimpleInterest(amount);
+        document.write(interest);
+
+    </script>
+
+</body>
+</html>

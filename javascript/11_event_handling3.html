@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mt-4">
+                <button id="zoomin" type="button" class="btn btn-danger">Zoom In</button>
+                <button id="zoomout" type="button" class="btn btn-warning">Zoom
+                    Out</button>
+                <button id="reset" type="button" class="btn btn-primary">Reset</button>
+                <button id="shadow" type="button" class="btn btn-success">Shadow</button>
+                <button id="removeshadow" type="button" class="btn btn-info">Remove
+                    Shadow</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center mt-4">
+                <img src="1.webp" id="image" height="300" width="300">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script src="common.js"></script>
+
+    <script>
+        var img = $('image');
+        var height = parseInt(img.getAttribute("height"));
+        var width = parseInt(img.getAttribute("width"));
+        let zoomEffect = (ButtonId) => {
+            if (ButtonId == "zoomin") {
+                height = parseInt(height * 1.10);
+                width = parseInt(width * 1.10);
+            }
+            else if (ButtonId == "zoomout") {
+                height = parseInt(height * 0.90);
+                width = parseInt(width * 0.90);
+            }
+            else if (ButtonId == "reset") {
+                height = 300;
+                width = 300;
+            }
+            else if (ButtonId == "shadow") {
+                img.className = "shadow-lg"
+            }
+            else if (ButtonId == "removeshadow") {
+                img.className = "";
+            }
+            img.setAttribute('height', height);
+            img.setAttribute('width', width);
+        }
+
+        let zoomin = document.querySelector('#zoomin');
+        let zoomout = document.querySelector('#zoomout');
+        let reset = document.querySelector('#reset');
+        let shadow = document.querySelector('#shadow');
+        let removeshadow = document.querySelector('#removeshadow');
+
+        // event handling
+        zoomin.onclick = () =>zoomEffect(zoomin.id);
+        zoomout.onclick = () => zoomEffect(zoomout.id);
+        reset.onclick = () => zoomEffect(reset.id);
+        shadow.onclick = () =>zoomEffect(shadow.id);
+        removeshadow.onclick = () => zoomEffect(removeshadow.id);
+    </script>
+
+</body>
+
+</html>
