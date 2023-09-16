@@ -24,15 +24,19 @@
                                 <label for="amount" class="form-label">Amount:</label>
                                 <input type="number" class="form-control" id="amount" placeholder="Enter amount"
                                     required>
+                                <div id="error-amount" class="alert alert-danger p-2 my-2 d-none">Amount is required
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="rate" class="form-label">Rate:</label>
                                 <input type="number" class="form-control" id="rate" placeholder="Enter rate" required>
+                                <div id="error-rate" class="alert alert-danger p-2 my-2 d-none">Rate is required</div>
                             </div>
                             <div class="mb-3">
                                 <label for="year" class="form-label">year:</label>
                                 <input type="number" class="form-control" id="year" placeholder="Enter interest"
                                     required>
+                                <div id="error-year" class="alert alert-danger p-2 my-2 d-none">Year is required</div>
                             </div>
                             <h2 id="output"></h2>
                         </form>
@@ -42,40 +46,46 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <script src="common.js"></script>
     <script>
-        
+
+
         let amount = $('amount');
         let rate = $('rate');
         let year = $('year');
         let output = $('output');
 
-        let calculateInterest = function()
-        {
+        let calculateInterest = function (id, value) {
+            console.log(id, value);
+            if (value == '') {
+                $('error-' + id).className = "alert alert-danger p-2 my-2";
+            }
+            else {
+                $('error-' + id).className = "alert alert-danger p-2 my-2 d-none";
+            }
             let p = parseInt(amount.value);
             let r = parseInt(rate.value);
             let n = parseInt(year.value);
             let result = (p * r * n) / 100;
-            if(isNaN(result) == false)
+            if (isNaN(result) == false)
                 output.innerHTML = result;
-            else 
+            else
                 output.innerHTML = "";
         }
 
-        amount.addEventListener("blur", function(){
-            console.log(this.id, this.value);
-            calculateInterest();
+        amount.addEventListener("blur", function () {
+            calculateInterest(this.id, this.value);
         });
 
-        rate.addEventListener("blur", function(){
-            console.log(this.id, this. value);
-            calculateInterest();
+        rate.addEventListener("blur", function () {
+            calculateInterest(this.id, this.value);
         });
 
-        year.addEventListener("blur", function(){
-            console.log(this.id, this.value);
-            calculateInterest();
+        year.addEventListener("blur", function () {
+            calculateInterest(this.id, this.value);
         });
 
     </script>

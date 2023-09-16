@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>2nd technique to create object</h2>
+            </div>
+        </div>
+        <div class="row" id="output">
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="common.js"></script>
+    <script>
+        //2nd technique to create template
+        var Book = new Object({
+            name: '',
+            price: null,
+            author: '',
+            photo: '',
+            display: function () {
+                let output = $("output");
+                output.innerHTML += `<div class='col-lg-4'>
+            <div class='card shadow'>
+                <img src=${this.photo} class='card-img-top' alt='Book Image'>
+                <div class='card-body'>
+                    <h5 class='card-title'>Title ${this.name}</h5>
+                    <p class='card-text'>Author: ${this.author}</p>
+                    <p class='card-text'>Price: ${this.price}</p>
+                </div>
+            </div>
+        </div>`
+            }
+        });
+
+        //create object
+        //var object-name = Template-Name 
+        var b1 = Book;
+
+        b1.name = "Learning Javascript";
+        b1.price = 100;
+        b1.author = "Ankit Patel";
+        b1.photo = "https://pluralsight2.imgix.net/paths/images/javascript-542e10ea6e.png";
+        console.log(b1);
+        b1.display();
+
+        var b2 = Book;
+        b2.name = "Learning React";
+        b2.price = 300;
+        b1.author = "Diya Patel";
+        b1.photo = "https://img.freepik.com/free-vector/react-native-mobile-app-abstract-concept-illustration-cross-platform-native-mobile-app-development-framework-javascript-library-user-interface-operating-system_335657-3350.jpg?w=2000";
+
+        b2.display();
+    </script>
+</body>
+
+</html>

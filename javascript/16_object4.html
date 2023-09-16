@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #output 
+        {
+            display: flex;
+            gap:20px;
+            flex-wrap: wrap;
+        }
+        #output>div 
+        {
+            background-color: aliceblue;
+            border:1px solid black;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object creation using 3rd technique</h1>
+    <hr/>
+    <div id="output">
+
+    </div>
+    <script src="common.js"></script>
+    <script>
+        //3rd technique object create 
+        function Movie(name,price,starcast)
+        {
+            this.name = name,
+            this.price = price,
+            this.starcast = starcast,
+            this.display = function(){
+                let output = $("output");
+                output.innerHTML +=`<div><h3>${this.name}</h3><b>Price</b>${this.price} <br/> <b>Starcast</b>${this.starcast}</div>`;
+            }
+        }
+        //create object 
+        var m1 = new Movie("ABCD",100,"Mr A, Miss B, MRS C");
+        m1.display();
+
+        var m2 = new Movie("BCDE",49,"Mr X, Miss Y, MRS Z");
+        m2.display();
+
+        var m3 = new Movie("xyz",175,"Mr AX, Miss AY, MRS AZ");
+        m3.display();
+        
+    </script>
+</body>
+</html>

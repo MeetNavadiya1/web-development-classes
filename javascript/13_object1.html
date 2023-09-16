@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>
+        Create object (first technique) 
+    </h1>
+
+    <b>use console to see output</b>
+    
+    <hr>
+
+    <script>
+        // 1st technique
+        let student = {
+            name : 'diya',
+            email : 'diya@gmail.com',
+            age : 10,
+            gender : false
+        }
+
+        console.log(student);
+        console.log(student.name);
+        console.log(student.email);
+        console.log(student.age);
+        console.log(student.gender);
+        //change properties using object
+        student.name = 'Jiya';
+        student.age = 11;
+        console.log(student.name);
+        console.log(student.email);
+        console.log(student.age);
+        console.log(student.gender);
+        //add/create new properties using object
+        student.city = 'Bhavnagar';
+        console.log(student);
+    </script>
+
+</body>
+</html>

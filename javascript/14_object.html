@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create object (1st technique)</h1>
+    <hr/>
+     <table align="center" cellpadding="10" border="2">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>email</td>
+                <td>age</td>
+                <td>gender</td>
+            </tr>
+        </thead>
+        <tbody id="output">
+        </tbody>
+     </table>
+    <script src="common.js"></script>
+    <script>
+        //1st technique
+        let student = {
+            name: "Diya",
+            email: 'diya@gmail.com',
+            age : 10,
+            gender: false,
+            display: function(){
+                console.log(this);
+                let output = $("output");
+                let temp = (this.gender === true) ? "Male" : "Female";
+                output.innerHTML += `<tr><td>${this.name}</td><td>${this.email}</td><td>${this.age}</td><td>${temp}</td></tr>`;
+            }
+        };
+        student.display();  
+
+        let student2 = {
+            name: "divya",
+            email: 'divya@gmail.com',
+            age : 25,
+            gender: false,
+            display: function(){
+                console.log(this);
+                let output = $("output");
+                let temp = (this.gender === true) ? "Male" : "Female";
+                output.innerHTML += `<tr><td>${this.name}</td><td>${this.email}</td><td>${this.age}</td><td>${temp}</td></tr>`;
+            }
+        };
+
+        student2.display();
+    </script>
+</body>
+</html>
