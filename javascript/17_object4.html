@@ -93,16 +93,16 @@
                 let output = $("output");
                 let temp = ((this.price * this.quantity) * this.tax) / 100;
                 this.total = ((this.price * this.quantity) + temp).toFixed(2);
-                grandtotal += this.total;
+                grandtotal +=  parseFloat(this.total);
                 output.innerHTML += `<tr><td>${this.name}</td><td class='text-end'>${this.price}</td><td class='text-end'>${this.quantity}</td><td class='text-end'>${this.tax}</td><td class='text-end'>${this.total}</td><td><a href='#' onclick='DeleteItem(this);'><i class="fa fa-trash fa-2x"></i></a></td></tr>`;
-                $("total").innerHTML = grandtotal.toFixed(2);
+                $("total").innerHTML = grandtotal;
             }
         }
         function DeleteItem(item)
         {
             console.log(item);
             //get total 
-            let total = item.parentElement.parentElement.getElementByName('td')[4].innerHTML;
+            let total = item.parentElement.parentElement.getElementsByTagName('td')[4].innerHTML;
             grandtotal = grandtotal - total;
             $("total").innerHTML = grandtotal.toFixed(2);
             item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);

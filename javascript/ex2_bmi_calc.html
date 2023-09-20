@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header fs-3 text-bg-danger text-center">
+                        BMI Calculator
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="height-feet" class="form-label">Height (Feet)</label>
+                            <input type="number" class="form-control" id="height-feet" placeholder="Feet">
+                            <div class="alert alert-danger p-1 my-2 d-none" id="error-height-feet" role="alert">
+                                Please Enter height in feet
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="height-inches" class="form-label">Height (Inches)</label>
+                            <input type="number" class="form-control" id="height-inches" placeholder="Inches">
+                            <div class="alert alert-danger p-1 my-2 d-none" id="error-height-inches" role="alert">
+                                Please Enter height in inches
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="weight" class="form-label">Weight (kg)</label>
+                            <input type="number" class="form-control" id="weight" placeholder="Weight in kilograms">
+                            <div class="alert alert-danger p-1 my-2 d-none" id="error-weight" role="alert">
+                                Please Enter weight
+                            </div>
+                        </div>
+                        <div id="output">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to Bootstrap JS and Popper.js (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="common.js"></script>
+    <script>
+
+        let heightFeet = $('height-feet');
+        let heightInches = $('height-inches');
+        let weight = $('weight');
+        let output = $('output');
+
+        console.log(heightFeet.value, heightInches.value, weight.value);
+
+        heightFeet.addEventListener('blur', function () {
+            calculateBMI(this.id, this.value)
+            // console.log(this.id, this.value)
+        });
+
+        heightInches.addEventListener('blur', function () {
+            calculateBMI(this.id, this.value)
+        });
+
+        weight.addEventListener('blur', function () {
+            calculateBMI(this.id, this.value)
+        });
+
+        function calculateBMI(id, value) {
+
+            console.log(id,value)
+            if (value == '') {
+                $('error-' + id).className = "alert alert-danger p-2 my-2";
+            }
+            else {
+                $('error-' + id).className = "alert alert-danger p-2 my-2 d-none";
+            }
+
+            let hf = parseFloat(heightFeet.value);
+            let hi = parseFloat(heightInches.value);
+            let w = parseFloat(weight.value);
+
+            // Convert height to meters
+            let heightMeters = ((hf * 12) + hi) * 0.0254;
+
+            // Calculate BMI
+            let bmi = w / (heightMeters * heightMeters);
+
+            if(isNaN(bmi) == false)
+            {
+                output.innerHTML = bmi.toFixed(2);
+            }
+            else
+            {
+                output.innerHTML = '<p class="fs-4">Please enter valid data</p>';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
