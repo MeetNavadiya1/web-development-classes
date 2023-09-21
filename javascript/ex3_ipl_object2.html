@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>ipl teams</title>
+</head>
+
+<body>
+
+    <div class="conatiner-fluid">
+        <div class="row shadow">
+            <div class="col-12 text-bg-danger text-center">
+                <h2>IPL Teams</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row" id="output">
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="common.js"></script>
+
+    <script>
+        var iplTeam = new Object({
+            name: '',
+            img: '',
+            display: function () {
+                let output = $('output');
+                output.innerHTML += `<div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                    <div class="card mt-4 shadow">
+                                        <div class="card-header text-bg-secondary fs-5 text-center">
+                                                    ${this.name}
+                                        </div>
+                                        <div class="card-body">
+                                            <img src=${this.img} class='card-img-top img-fluid' alt='Book Image'>
+                                        </div>
+                                        </div>
+                                    </div>`
+            }
+        });
+
+        var t1 = iplTeam;
+        t1.name = "Mumbai Indians";
+        t1.img = "images/mi.jpg"
+        t1.display();
+
+        var t2 = iplTeam;
+        t2.name = "Chennai Super Kings";
+        t2.img = "images/csk.jpg"
+        t2.display();
+
+        var t3 = iplTeam;
+        t3.name = "Kolkata Knight Riders";
+        t3.img = "images/kkr.webp"
+        t3.display();
+
+        var t4 = iplTeam;
+        t4.name = "Delhi Capitals";
+        t4.img = "images/dc.webp"
+        t4.display();
+
+        var t5 = iplTeam;
+        t5.name = "Rajasthan Royals";
+        t5.img = "images/rr.webp"
+        t5.display();
+
+        var t6 = iplTeam;
+        t6.name = "Punjab Kings";
+        t6.img = "images/pk.webp"
+        t6.display();
+
+        var t7 = iplTeam;
+        t7.name = "Sunrisers Hyderabad";
+        t7.img = "images/srh.jpg"
+        t7.display();
+
+        var t8 = iplTeam;
+        t8.name = "Royal Challengers Bangalore";
+        t8.img = "images/rcb.webp"
+        t8.display();
+
+        var t9 = iplTeam;
+        t9.name = "Lucknow Super Giants";
+        t9.img = "images/lucknow.jpg"
+        t9.display();
+
+        var t10 = iplTeam;
+        t10.name = "Gujarat Titans";
+        t10.img = "images/gujarat.webp"
+        t10.display();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Grams into KG and Ton</h1>
+                <hr />
+            </div>
+            <div class="col-12" id="output"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="common.js"></script>
+
+    <script>    
+        class KG
+        {
+            constructor(gram)
+            {
+                this.gram = gram;
+            }
+            getKg()
+            {
+                let temp = this.gram / 1000;
+                return temp.toFixed(2);
+            }
+        }
+        class Tone extends KG
+        {
+            constructor(gram)
+            {
+                super(gram);
+            }
+            getTone()
+            {
+                let temp = super.getKg() / 1000;
+                return temp.toFixed(2);
+            }
+        }
+
+        var gram = parseInt(prompt("Enter grams : "))
+
+        var g1 = new KG(gram);
+        var temp = g1.getKg();
+        $('output').innerHTML += `Kilogram = ${temp} of ${gram} grams`;
+
+        var t1 = new Tone(gram);
+        var temp = t1.getTone();
+        $('output').innerHTML += `<br>Tones = ${temp} of ${gram} grams`;
+
+    </script>
+</body>
+</html>

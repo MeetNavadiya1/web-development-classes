@@ -93,6 +93,7 @@
                 let output = $("output");
                 let temp = ((this.price * this.quantity) * this.tax) / 100;
                 this.total = ((this.price * this.quantity) + temp).toFixed(2);
+                console.log(this.total);
                 grandtotal +=  parseFloat(this.total);
                 output.innerHTML += `<tr><td>${this.name}</td><td class='text-end'>${this.price}</td><td class='text-end'>${this.quantity}</td><td class='text-end'>${this.tax}</td><td class='text-end'>${this.total}</td><td><a href='#' onclick='DeleteItem(this);'><i class="fa fa-trash fa-2x"></i></a></td></tr>`;
                 $("total").innerHTML = grandtotal;
