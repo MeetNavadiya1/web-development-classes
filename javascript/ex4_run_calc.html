@@ -56,21 +56,10 @@
                         </form>
 
                         <p class="fs-5 fw-bold mt-4">Run Details</p>
-                        <table class="table table-stripped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="col-4">Player Name</th>
-                                    <th class="col-8">Last Balls</th>
-                                </tr>
-                            </thead>
-                            <tbody id="p-detail">
 
-                            </tbody>
-                        </table>
-
-                        <table class="table table-stripped table-bordered">
+                        <table class="table table-stripped">
                             <tbody id="output">
-                                
+
                             </tbody>
                         </table>
 
@@ -93,35 +82,35 @@
                 this.run = run;
                 this.ball = ball;
                 this.name = name;
-                // this.totalrun = 0;
-                // this.totalball = 0;
+                this.totalrun = 0;
+                this.totalball = 0;
             }
             addRow() {
                 let output = $("output");
-                this.totalrun = this.run;
-                this.totalball = this.ball;
+                this.totalrun += this.run;
+                this.totalball += 1;
                 this.strikrate = (this.totalrun / this.totalball) * 100;
                 console.log(this);
                 output.innerHTML += `<tr>
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label>${this.name}</label>
-                                        </div>
-                                        <div class="col">
-                                            <label>Runs : ${this.totalrun}</label>
-                                        </div>
-                                        <div class="col">
-                                            <label>Balls : ${this.totalball}</label>
-                                        </div>
-                                        <div class="col">
-                                            <label>Strike rate :${this.strikrate}</label>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label>${this.name}</label>
+                                            </div>
+                                            <div class="col">
+                                                <label>Runs : ${this.totalrun}</label>
+                                            </div>
+                                            <div class="col">
+                                                <label>Balls : ${this.totalball}</label>
+                                            </div>
+                                            <div class="col">
+                                                <label>Strike rate :${this.strikrate}</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </tr>`;
+                            </tr>`;
             }
         }
 
@@ -134,7 +123,7 @@
             pr.addRow();
             return false;
         }
-        
+
     </script>
 
 </body>
