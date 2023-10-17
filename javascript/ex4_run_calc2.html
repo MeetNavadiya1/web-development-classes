@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Run calculator</title>
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-header fs-4 fw-bold text-center text-bg-danger">
+                        Run Calculator
+                    </div>
+                    <div class="card-body py-4">
+                        <form method="post" onsubmit="return addRow();">
+                            <div class="row">
+                                <div class="col">
+                                    <select class="form-select" aria-label="Default select example" id="player">
+                                        <option selected>select player</option>
+                                        <option value="0">Virat kohli</option>
+                                        <option value="1">Rohit Sharma</option>
+                                        <option value="2">Shikhar Dhavan</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" aria-label="Default select example" id="ball">
+                                        <option selected>select ball</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input type="number" class="form-control" id="run" min=0 max=6
+                                        placeholder="Enter runs" required>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-danger w-100">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <table class="table table-bordered table-stripped mt-5">
+                    <thead>
+                        <tr>
+                            <td class="col-4">Name</td>
+                            <td class="col-8">Ball</td>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+                        
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="common.js"></script>
+
+    <script>
+
+        function addRow() {
+            let player = $('player').value;
+            let ball = $('ball').value;
+            let run = $('run').value;
+            let output = $('output');
+            console.log(player, ball, run);
+            output.innerHTML = `<tr><td>${player}</td><td>${ball}</td><td>${run}</td></tr>`;
+            return false;
+        }
+    </script>
+</body>
+
+</html>
