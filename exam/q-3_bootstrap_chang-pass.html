@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change password</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card mt-5 w-50 m-auto shadow">
+                    <div class="card-header text-bg-danger fs-4 fw-bold text-center">
+                        Change Password
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                              
+                            <div class="col mt-3 mb-4 w-75 m-auto form-floating mb-3">
+                    
+                                <input type="password" id="old_pass" class="form-control" placeholder="name@example.com" />
+                                <label for="old_pass">Old Password</label>
+                              
+                            </div>
+    
+                            <div class="col mt-3 mb-4 w-75 m-auto">
+                                <label for="new_pass" class="form-label">New Password</label>
+                                <input type="password" maxlength="15" id="new_pass" class="form-control" required/>
+                            </div>
+
+                            <div class="col my-3 w-75 m-auto">
+                                <label for="con_pass" class="form-label">Confirm Password</label>
+                                <input type="password" maxlength="15" id="con_pass" class="form-control" required/>
+                            </div>
+    
+                            <div class="col text-center w-75 m-auto">
+                                <input type="submit" value="Change Password" class="btn btn-danger fs-5 fw-bold p-1 mt-3">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+</body>
+</html>

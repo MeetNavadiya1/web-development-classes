@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coundown</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card w-50 m-auto mt-5">
+                    <div class="card-header">
+                        Timer
+                    </div>
+                    <div class="card-body">
+                        <form action="" onsubmit="return Timer();">
+                            <label for="" class="form-label">Enter Time in minutes</label>
+                            <input type="text" class="form-control" id="minute" required />
+                            <input type="submit" value="Set" class="btn btn-warning mt-3 w-100">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card w-50 m-auto mt-5">
+                    <div class="card-header">
+                        Coundown
+                    </div>
+                    <div class="card-body">
+                        <div class="fs-2 fw-bold text-center" id="output">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function Timer() {
+            let minute = parseFloat(document.getElementById('minute').value);
+            let output = document.getElementById('output')
+            let second = minute * 60;
+            let realsec = second;
+            setInterval(minus = () => {
+                if (realsec != 0) {
+                    realsec = realsec - 1;
+                    output.innerHTML = realsec;
+                }
+            }, 1000);
+            return false;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" onsubmit="return showOutput();">
+        <input type="text" id="input" required />
+        <input type="submit" value="Output">
+    </form>
+    <h1 id="output"></h1>
+
+    <script>
+        function showOutput(){
+            let input = document.getElementById('input').value;
+            let output = document.getElementById('output');
+            output.innerHTML = input;
+            return false;
+        }
+    </script>
+</body>
+</html>

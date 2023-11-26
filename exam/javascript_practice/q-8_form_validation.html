@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card w-50 mt-5 m-auto">
+                    <div class="card-header">
+                        Form validation
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="row">
+                                <label for="" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name">
+                                <div class="alert alert-danger mt-2 p-1 d-none" id="err-name" role="alert">
+                                    please Enter Your Name
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email">
+                                <div class="alert alert-danger mt-2 p-1 d-none" id="err-email" role="alert">
+                                    please Enter Your Email
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="" class="form-label">Mobile No.</label>
+                                <input type="number" class="form-control" id="number">
+                                <div class="alert alert-danger mt-2 p-1 d-none" id="err-number" role="alert">
+                                    please Enter Your Mobile Number
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="Submit" class="btn btn-secondary mt-3"
+                                    onclick="return validation();">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function validation() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let number = document.getElementById('number').value;
+            if (name == '')
+                document.getElementById('err-name').className = 'alert alert-danger mt-2 p-1';
+            if (email == '')
+                document.getElementById('err-email').className = 'alert alert-danger mt-2 p-1';
+            if (number == '')
+                document.getElementById('err-number').className = 'alert alert-danger mt-2 p-1';
+            return false;
+        }
+    </script>
+</body>
+
+</html>

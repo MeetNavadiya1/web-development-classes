@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card w-50 mt-5 m-auto">
+                    <div class="card-header">
+                        Quiz
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div id="output" class="m-2 mb-4">
+                                click below button to start...
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-success" onclick="return nextQue();">Next <i
+                                        class='fa-solid fa-arrow-right'></i></button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b3c19b0ad4.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        var mcq = [
+            {
+                question: "What does CPU stand for?",
+                options: ["Central Processing Unit", "Central Process Unit", "Computer Personal Unit", "Central Processor Unit"],
+                answer: "Central Processing Unit"
+            },
+            {
+                question: "Which programming language is also known as the 'language of the web'?",
+                options: ["Java", "C++", "Python", "JavaScript"],
+                answer: "JavaScript"
+            },
+            {
+                question: "What does HTML stand for?",
+                options: ["Hyper Text Markup Language", "High Tech Markup Language", "Hyperlink and Text Markup Language", "Hyperlink Technology Markup Language"],
+                answer: "Hyper Text Markup Language"
+            },
+            {
+                question: "Which company developed the first commercially available computer?",
+                options: ["IBM", "Apple", "Microsoft", "UNIVAC"],
+                answer: "UNIVAC"
+            },
+            {
+                question: "What is the purpose of a firewall in a computer system?",
+                options: ["Prevents unauthorized access", "Speeds up the internet connection", "Manages computer memory", "Enhances graphic performance"],
+                answer: "Prevents unauthorized access"
+            },
+            {
+                question: "What is the binary system in computing?",
+                options: ["A numbering system based on 10 digits", "A numbering system based on 2 digits (0 and 1)", "A numbering system based on 16 digits", "A numbering system based on 8 digits"],
+                answer: "A numbering system based on 2 digits (0 and 1)"
+            },
+            {
+                question: "Which of the following is NOT an operating system?",
+                options: ["Linux", "Windows", "iOS", "Microsoft Office"],
+                answer: "Microsoft Office"
+            },
+            {
+                question: "What does RAM stand for in a computer?",
+                options: ["Random Access Memory", "Readily Accessed Memory", "Running Application Memory", "Random Algorithm Memory"],
+                answer: "Random Access Memory"
+            },
+            {
+                question: "What is the purpose of an 'if-else' statement in programming?",
+                options: ["To loop through a set of instructions", "To perform a specific action based on a condition", "To declare variables", "To store data"],
+                answer: "To perform a specific action based on a condition"
+            },
+            {
+                question: "What protocol is used to send email over the Internet?",
+                options: ["HTTP", "SMTP", "FTP", "SSH"],
+                answer: "SMTP"
+            }
+        ];
+        var count = 0;
+        var result = 0;
+        var wrong = 0;
+        var recent = 0;
+        var que = '';
+        var op_1 = '';
+        var op_2 = '';
+        var op_3 = '';
+        var op_4 = '';
+        var choice = '';
+        function nextQue() {
+            if (count >= 1 && count <= 10) {
+                choice = document.querySelector("input[name='option']:checked").value;
+                console.log(choice);
+                let answer = mcq[recent].answer;
+                recent++;
+                if (choice == answer) {
+                    result++;
+                    console.log(result);
+                    console.log('true')
+                }
+                else {
+                    wrong++;
+                    console.log('false');
+                }
+            }
+            let output = document.getElementById('output');
+
+            
+            if (count < 10) {
+                mcq.map((item) => {
+                    que = mcq[count].question;
+
+                    op_1 = mcq[count].options[0];
+                    op_2 = mcq[count].options[1];
+                    op_3 = mcq[count].options[2];
+                    op_4 = mcq[count].options[3];
+                });
+
+                output.innerHTML = `<p>${que}</p>
+                            <div>
+                                <div class="col-12-12">
+                                    <input type="radio" class="form-check-input" id="op_1" name='option' value='${op_1}'>
+                                    <label for="op_1" class="form-check-label">${op_1}</label>
+                                </div>
+                                <div class="col-12">
+                                    <input type="radio" class="form-check-input" id="op_2" name='option' value='${op_2}'>
+                                    <label for="op_2" class="form-check-label">${op_2}</label>
+                                </div>
+                                <div class="col-12">
+                                    <input type="radio" class="form-check-input" id="op_3" name='option' value='${op_3}'>
+                                    <label for="op_3" class="form-check-label">${op_3}</label>
+                                </div>
+                                <div class="col-12">
+                                    <input type="radio" class="form-check-input" id="op_4" name='option' value='${op_4}'>
+                                    <label for="op_4" class="form-check-label">${op_4}</label>
+                                </div>
+                            </div>`;
+
+            }
+            else {
+                output.innerHTML = `your score : ${result}`;
+                output.innerHTML += `Flase Answer ; ${wrong}`;
+                output.innerHTML += '<br>If you want to restart click next button';
+                count = -1;
+                recent = 0;
+                result = 0;
+                wrong = 0;
+                console.log(count);
+            }
+            count++;
+            console.log(count);
+            return false;
+        }
+        function countResult() {
+            // console.log(choice,answer);  
+            if (count >= 1 && count < 10) {
+
+
+            }
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

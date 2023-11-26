@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="button" value="show" id="show" onclick="showElement();">
+    <input type="button" value="hide" id="hide" onclick="hideElement();">
+    <p id="element">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsam natus deserunt fugiat voluptates, corporis
+        earum perspiciatis repellendus facere, nostrum libero aliquid repellat itaque ratione magnam vel adipisci
+        tempora eveniet! Quaerat impedit repudiandae dolorem officiis fuga deleniti, in sed iusto cumque ducimus esse
+        voluptate quasi accusamus, odio possimus placeat perferendis!
+    </p>
+
+    <script>
+        let content = document.getElementById('element');
+        let show = document.getElementById('show');
+        let hide = document.getElementById('hide');
+
+        function showElement() {
+            content.style.display = 'block';
+        }
+
+        function hideElement() {
+            content.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
