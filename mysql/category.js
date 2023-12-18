@@ -69,6 +69,11 @@ app.delete('/category/:id', function (request, response) {
     });
 });
 
+
+// purpose = used to insert data
+// url = http://localhost:5000/category
+// method = post
+// input = title,photo,islive,isdeleted
 app.post('/category', function (request, response) {
     let title = request.body.title;
     let photo = request.body.photo;
@@ -91,6 +96,37 @@ app.post('/category', function (request, response) {
     }
 });
 
+
+// purpose = used to update the row
+// url = http://localhost:5000/category
+// method = put
+// input = title,photo,islive,isdeleted,id
+app.put('/category',function(request,response){
+    let title = request.body.title;
+    let photo = request.body.photo;
+    let islive = request.body.islive;
+    let isdeleted = request.body.isdeleted;
+    let id = request.body.id;
+
+    if(title === undefined || photo === undefined || islive === undefined || isdeleted === undefined || id === undefined)
+    {
+        response.json([{'error ':'error occured'}]);
+    }
+    else
+    {
+        let sql = `update category set title='${title}',photo='${photo}',islive='${islive}',isdeleted='${isdeleted}' where id='${id}'`;
+        connection.con.query(sql,function(error,result){
+            if(error)
+            {
+                response.json([{'error ': 'error occured'}]);
+            }
+            else
+            {
+                response.json([{'error ':'no error'},{'message ':'row updated'}]);
+            }
+        });
+    }
+});
 
 app.listen(5000);
 console.log('ready accept request');
